@@ -1,6 +1,6 @@
 #Funkcja usuwa liczby z pliku genom.txt
-def delete_integer():
-    no_integers = [x for x in data if not (x.isdigit() 
+def delete_integer(txt_data):
+    no_integers = [x for x in txt_data if not (x.isdigit() 
         or x[0] == x[1:].isdigit())]
     return no_integers
 
@@ -28,7 +28,7 @@ with open('genom.txt', 'r') as file:
     data = file.read().split()
 
 #Tworzy z pliku genom.txt string
-genom_string = ''.join(delete_integer()).upper()
+genom_string = ''.join(delete_integer(data)).upper()
 
 #Klasa - w taki sposób tworzy się 1 primer. Na dole - tworzą sie nowe primery i dodawane są do listy: primer_list
 class primer:  
